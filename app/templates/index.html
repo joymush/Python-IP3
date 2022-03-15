@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+<script type="textjavascript"
+         src="{{ url_for('static', filename='update') }}"></script>
+
+{% block content %}
+
+    <div class="container">
+ 
+    <h1>Pitches From Various People </h1>
+        <div class="row" >
+            <ul>
+                {% for pitch in pitchs %}
+
+                   <div class="col-sm-7" style="background-color: biege; margin-bottom: 20px;margin-right: px;" >{{pitch.pitch}}</div><br><br>
+                   <div class="col-sm-5" style=" margin-bottom: 20px;margin-right: px; min-height: max-content;">
+                   sender: {{pitch.sender}}  <button onclick="pitch.upvote +=1" class="btn btn-sm btn-success" >{{pitch.upvote}} <i class="fa fa-thumbs-up" id="like">Upvotes</i></button> 
+                     <button class="btn btn-sm btn-neutral" >{{pitch.downvote}} <i class="fa fa-thumbs-up" id="like">Downvotes</i></button> 
+                           comments:    {{pitch.comments}}  |     time published: {{pitch.published_at}}
+                    </div><br><br>
+
+
+
+                    {% endfor %}
+
+            </ul>
+        </div>
+
+
+    </div>
+
+
+
+{% endblock %}

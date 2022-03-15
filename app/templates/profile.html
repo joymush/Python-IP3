@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <H3>PITCHES</H3>
+           <ul>
+               {% for item in mypitch %}
+
+               {{item.pitch}} <br><br>
+               {% endfor %}
+           </ul>
+        </div>
+        <div class="col-md-4" style="background-color:beige">
+            <h3>User Details</h3>
+            username : {{use.username}}<br>
+            email : {{user.email}}
+
+        </div>
+        </div>
+            <a href="{{url_for('pitchForm')}}">add pitch</a>
+
+    </div>
+</div>
+
+
+{% endblock %}
